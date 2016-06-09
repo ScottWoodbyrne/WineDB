@@ -7,3 +7,4 @@ angular.module('YNDBDirectives',[]).directive('wineInfoBox', function() {
     templateUrl: 'templates/directives/wine-info-box.html'
   };
 });
+

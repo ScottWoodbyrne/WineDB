@@ -7,25 +7,26 @@ angular.module('YNDBApp', ['ngRoute','YNDBControllers','YNDBDirectives','YNDBSer
 .config(function($routeProvider) {
 		 
 		$routeProvider
-		  .when('/popular', {
+			.when('/home', {
+		  	templateUrl: 'templates/home.html',
+		  	controller: 'HomeController'
+		  })
+		 	.when('/popular', {
 		  	templateUrl: 'templates/wines.html',
 		  	controller: 'WineListController'
 		  })
-		  .when("/wine/:wineId", {
+			.when('/red', {
+		  	templateUrl: 'templates/wines.html',
+			controller: 'WineRedController'
+		  })
+		  .when('/white', {
+		  	templateUrl: 'templates/wines.html',
+			controller: 'WineWhiteController'
+		  })
+
+		 	.when("/wine/:wineId", {
 		  	templateUrl: "templates/wineDetails.html",
 		  	controller: "WineDetailsController"
 		  })
-		 //  .when('/upcoming', {
-		 //  	templateUrl: 'templates/movies.html',
-			// controller: 'MovieUpcomingController'
-		 //  })
-		 //  .when('/topRated', {
-		 //  	templateUrl: 'templates/movies.html',
-			// controller: 'MovieTopRatedController'
-		 //  })
-		 //  .when("/nowPlaying", {
-			// templateUrl: "templates/moviesDetails.html",
-			// controller: "MovieNowPlayingController"
-		 //  })
-		  .otherwise({redirectTo: '/popular'}); 
+		  .otherwise({redirectTo: '/home'}); 
 	});

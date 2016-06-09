@@ -1,8 +1,8 @@
-<div class="panel panel-default">
-	<img class='img-responsive'	ng-src="{{wine.Labels[0].Url}}" style="">
-	<div class="panel-heading">
-		<h3	class="panel-title"	>{{wine.Name}}</h3>
-	</div>
-	<div class="panel-footer">From:{{wine.Appellation.Name}}
-	</div>
-</div>
+
+<img class="img-circle" ng-src="{{wine.Labels[0].Url}}" alt="Image missing" width="140" height="140"> 
+<h2>{{wine.Name}}</h2> 
+<h3>{{wine.Appellation.Name}}</h3> 
+<p>{{wine.Appellation.Region.Name}}</p>
+
+
+

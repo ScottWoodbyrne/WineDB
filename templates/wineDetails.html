@@ -1,18 +1,55 @@
 <div class='container'>
+	 	<div class="navbar-wrapper">
+	        <nav class="navbar navbar-inverse navbar-static-top">
+	          <div class="container">
+	            <div class="navbar-header">
+
+	              <a class="navbar-brand" href="#/home">YNDB</a>
+	            </div>
+	            <div id="navbar" class="navbar-collapse collapse">
+	              <ul class="nav navbar-nav">
+	                <li><a	href='#/popular'>Popular</a></li>
+		 			<li><a	href='#/red'>Red</a></li>
+					<li><a	href='#/white'>White</a></li>
+	              </ul>
+	            </div>
+	          </div>
+	        </nav>
+
+	    </div>
+	 
+
 	<h1>{{title}}</h1>
+	<div class="jumbotron">
 		<div class='row'>
 			<div class="col-md-3">
-			
-				<img ng-src="{{wine.Label[0].URL}}" class='img-responsive'>
+				<img ng-src="{{wineSingle.Labels[1].Url}}" class='img-responsive'>
+				<h2><a href="{{wineSingle.Community.Url}}" target="_blank">Read other reviews or leave your own</a></h2>
 			</div>
 			<div class="col-md-7">
-				<h1	class="">{{wine.Name}}</h1>
-				<p>	{{wine.Appellation.Name}}</p>
-				<p></p>
-				<h3>Tag	Line</h3>
-				<p class="" style="color: black">{{wine.Appellation.Region.Name}} </p>
+				<div class='row'>
+					<div class="col-md-6">
+						<h2>Wine Name:</h2>
+						<h3>{{wineSingle.Name}}</h3>
+						<h2>Varietal:</h2>
+						<p>{{wineSingle.Varietal.Name}}</p>
+						<h2>Highest Rating:</h2>
+						<p>{{wineSingle.Ratings.HighestScore}}%</p>
+					</div>
+					<div class="col-md-6">
+						<h2>Vineyard:</h2>
+						<p>{{wineSingle.Vineyard.Name}}</p>
+						<h2>Appellation:</h2>
+						<p>{{wineSingle.Appellation.Name}}</p>
+						<h2>Region:</h2>
+						<p>{{wineSingle.Appellation.Region.Name}}</p>
+						<h2>Vintage:</h2>
+						<p>{{wineSingle.Vintage}}</p>
+					</div>
+				</div>
 			</div>
 		</div>
 		<br/><br/>
 		<a href="#/popular"><button	class="btn btn-primary">Return Wines</button></a>
+	</div>
 </div>
