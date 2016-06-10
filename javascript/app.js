@@ -13,6 +13,10 @@ angular.module('YNDBApp', ['ngRoute','YNDBControllers','YNDBDirectives','YNDBSer
 		  	templateUrl: 'templates/home.html',
 		  	controller: 'HomeController'
 		  })
+			// .when('/search', {
+		 //  	templateUrl: 'templates/wines.html',
+		 //  	controller: 'WineSearchController'
+		 //  })
 		 	.when('/popular', {
 		  	templateUrl: 'templates/wines.html',
 		  	controller: 'WineListController'

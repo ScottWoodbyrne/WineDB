@@ -6,6 +6,7 @@ angular.module('YNDBControllers',[])
  var url = myWineConfig.wineEndpoint + '&size=60&search=wine';
  WineListService.getList(url).then(
       function(result){
+        console.log(result)
           $scope.wineList = result.data.Products.List; /*res.filter(function(val){return val !== null});;*/
           $scope.loading = false;
       }
@@ -14,6 +15,9 @@ angular.module('YNDBControllers',[])
           console.log('error', error)
         });
 })
+
+
+
 .controller('HomeController',function($scope) {
 
 })
@@ -56,10 +60,6 @@ $routeParams, WineListService, myWineConfig)  {
     WineListService.getList(url).then(
           function(result){
             $scope.wineSingle = result.data.Products.List[0];
-            console.log($scope.wineSingle)
-            console.log($scope.wineSingle.Appellation.Name)
-            console.log($scope.wineSingle.Name)
-            console.log($scope.wineSingle.Labels[1].Url);
             }
             ).catch(
               function(error) {
@@ -70,8 +70,8 @@ $routeParams, WineListService, myWineConfig)  {
 
 // .controller('WineSearchController',function($scope, WineListService,myWineConfig) {
 //  $scope.loading = true;
-//  $scope.title = 'Popular Wines';
-//  var url = myWineConfig.wineEndpoint + '&size=12&search=wine';
+//  $scope.title = 'Search Results';
+//  var url = myWineConfig.wineEndpoint + '&size=60&search=' + ;
 //  WineListService.getList(url).then(
 //       function(result){
 //           $scope.wineList = result.data.Products.List; /*res.filter(function(val){return val !== null});;*/
@@ -81,7 +81,4 @@ $routeParams, WineListService, myWineConfig)  {
 //         function(error) { 
 //           console.log('error', error)
 //         });
-// })
-// .controller('HomeController',function($scope) {
-
 // })
