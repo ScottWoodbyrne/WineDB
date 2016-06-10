@@ -22,7 +22,7 @@ angular.module('YNDBControllers',[])
 .controller('WineRedController',function($scope, WineListService,myWineConfig) {
  $scope.loading = true;
  $scope.title = 'Red Wines'
- var url = myWineConfig.wineEndpoint + '&size=12&filter=categories(124)';
+ var url = myWineConfig.wineEndpoint + '&size=60&filter=categories(124)';
  WineListService.getList(url).then(
       function(result){
           $scope.wineList = result.data.Products.List; /*res.filter(function(val){return val !== null});;*/
@@ -36,7 +36,7 @@ angular.module('YNDBControllers',[])
 .controller('WineWhiteController',function($scope, WineListService,myWineConfig) {
  $scope.loading = true;
  $scope.title = 'White Wines'
- var url = myWineConfig.wineEndpoint + '&size=12&filter=categories(125)';
+ var url = myWineConfig.wineEndpoint + '&size=60&filter=categories(125)';
  WineListService.getList(url).then(
       function(result){
           $scope.wineList = result.data.Products.List; /*res.filter(function(val){return val !== null});;*/
