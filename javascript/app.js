@@ -4,6 +4,8 @@ angular.module('YNDBApp', ['ngRoute','YNDBControllers','YNDBDirectives','YNDBSer
         "wineEndpoint" : "http://services.wine.com/api/beta2/service.svc/json/catalog?apikey=8757e0fcc2af6f00713450c0dba4eab4"
     })
 
+//routing for navbar
+
 .config(function($routeProvider) {
 		 
 		$routeProvider
