@@ -3,7 +3,7 @@ angular.module('YNDBControllers',[])
 .controller('WineListController',function($scope, WineListService,myWineConfig) {
  $scope.loading = true;
  $scope.title = 'Popular Wines';
- var url = myWineConfig.wineEndpoint + '&size=12&search=wine';
+ var url = myWineConfig.wineEndpoint + '&size=60&search=wine';
  WineListService.getList(url).then(
       function(result){
           $scope.wineList = result.data.Products.List; /*res.filter(function(val){return val !== null});;*/
@@ -66,3 +66,22 @@ $routeParams, WineListService, myWineConfig)  {
                 $location.path('/error/'+error.data.status_message+'/'+error.status)
               });
 })
+
+
+// .controller('WineSearchController',function($scope, WineListService,myWineConfig) {
+//  $scope.loading = true;
+//  $scope.title = 'Popular Wines';
+//  var url = myWineConfig.wineEndpoint + '&size=12&search=wine';
+//  WineListService.getList(url).then(
+//       function(result){
+//           $scope.wineList = result.data.Products.List; /*res.filter(function(val){return val !== null});;*/
+//           $scope.loading = false;
+//       }
+//       ).catch(
+//         function(error) { 
+//           console.log('error', error)
+//         });
+// })
+// .controller('HomeController',function($scope) {
+
+// })
