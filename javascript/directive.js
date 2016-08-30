@@ -1,3 +1,4 @@
+
 angular.module('YNDBDirectives',[]).directive('wineInfoBox', function() {
   return {
     restrict: 'E',    // usage of the directive: E -> element

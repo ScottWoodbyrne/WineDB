@@ -13,10 +13,8 @@ angular.module('YNDBApp', ['ngRoute','YNDBControllers','YNDBDirectives','YNDBSer
 		  	templateUrl: 'templates/home.html',
 		  	controller: 'HomeController'
 		  })
-			// .when('/search', {
-		 //  	templateUrl: 'templates/wines.html',
-		 //  	controller: 'WineSearchController'
-		 //  })
+
+		
 		 	.when('/popular', {
 		  	templateUrl: 'templates/wines.html',
 		  	controller: 'WineListController'
@@ -25,10 +23,12 @@ angular.module('YNDBApp', ['ngRoute','YNDBControllers','YNDBDirectives','YNDBSer
 		  	templateUrl: 'templates/wines.html',
 			controller: 'WineRedController'
 		  })
-		  .when('/white', {
+		  	.when('/white', {
 		  	templateUrl: 'templates/wines.html',
 			controller: 'WineWhiteController'
 		  })
+
+		 
 
 		 	.when("/wine/:wineId", {
 		  	templateUrl: "templates/wineDetails.html",

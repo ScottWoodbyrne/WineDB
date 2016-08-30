@@ -1,5 +1,8 @@
 angular.module('YNDBControllers',[])
 
+
+
+
 .controller('WineListController',function($scope, WineListService,myWineConfig) {
  $scope.loading = true;
  $scope.title = 'Popular Wines';
@@ -37,6 +40,8 @@ angular.module('YNDBControllers',[])
           console.log('error', error)
         });
 })
+
+
 .controller('WineWhiteController',function($scope, WineListService,myWineConfig) {
  $scope.loading = true;
  $scope.title = 'White Wines'
@@ -51,6 +56,7 @@ angular.module('YNDBControllers',[])
           console.log('error', error);
         });
 })
+
 
 .controller('WineDetailsController',function($scope, $location,  
 $routeParams, WineListService, myWineConfig)  {
@@ -68,17 +74,11 @@ $routeParams, WineListService, myWineConfig)  {
 })
 
 
-// .controller('WineSearchController',function($scope, WineListService,myWineConfig) {
-//  $scope.loading = true;
-//  $scope.title = 'Search Results';
-//  var url = myWineConfig.wineEndpoint + '&size=60&search=' + ;
-//  WineListService.getList(url).then(
-//       function(result){
-//           $scope.wineList = result.data.Products.List; /*res.filter(function(val){return val !== null});;*/
-//           $scope.loading = false;
-//       }
-//       ).catch(
-//         function(error) { 
-//           console.log('error', error)
-//         });
-// })
+.controller('WineSearchController', ['$scope', function($scope) {
+      $scope.master = "";
+
+      $scope.update = function(search) {
+        $scope.master = angular.copy(search);
+      };
+      console.log($scope.master);
+    }]);
